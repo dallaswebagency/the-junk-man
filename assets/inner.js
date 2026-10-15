@@ -24,3 +24,11 @@ document.querySelectorAll('[data-tabs]').forEach(function(w){var t=w.querySelect
  function sel(i){t.forEach(function(x,k){x.setAttribute('aria-selected',k===i?'true':'false');x.tabIndex=k===i?0:-1;p[k].hidden=k!==i;});}
  t.forEach(function(x,i){x.addEventListener('click',function(){sel(i);});x.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(i+1)%t.length;if(e.key==='ArrowLeft')n=(i-1+t.length)%t.length;if(n!==null){e.preventDefault();t[n].focus();sel(n);}});});});
 })();
+// generic filter (reviews, gallery) + lightbox
+(function(){
+document.querySelectorAll('[data-filter]').forEach(function(w){var ch=w.querySelectorAll('.rf-chips button'),it=w.querySelectorAll('[data-tags]'),grid=w.querySelector('.wk-grid');
+ ch.forEach(function(b){b.addEventListener('click',function(){var c=b.dataset.c;ch.forEach(function(x){x.classList.toggle('on',x===b);});it.forEach(function(x){x.hidden=!(c==='all'||x.dataset.tags.split(' ').indexOf(c)>-1);});if(grid)grid.classList.toggle('flat',c!=='all');});});});
+var lbs=document.querySelectorAll('.lb');if(lbs.length){var d=document.createElement('dialog');d.className='lbx';d.innerHTML='<button type="button" aria-label="Close">×</button><img alt=""><p></p>';document.body.appendChild(d);
+ lbs.forEach(function(b){b.addEventListener('click',function(){d.querySelector('img').src=b.dataset.src;d.querySelector('img').alt=b.dataset.cap;d.querySelector('p').textContent=b.dataset.cap;if(d.showModal)d.showModal();});});
+ d.addEventListener('click',function(e){if(e.target===d||e.target.tagName==='BUTTON')d.close();});}
+})();
