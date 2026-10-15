@@ -49,3 +49,9 @@ summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b
 .sec.awards .acard span{font-size:.78rem;line-height:1.3}
 .sec.awards .awards-foot{margin-top:18px;font-size:.85rem}
 @media(max-width:640px){.sec.awards .mq-track .acard{flex-basis:160px;width:160px}.sec.awards .bwrap{height:74px}.sec.awards .bwrap img{max-height:74px}}
+/* tap targets: at least 44px tall on touch screens */
+@media(max-width:900px){
+.crumbs a{display:inline-block;padding:13px 6px;margin:-13px -6px}
+.ip-more a,.wh-a,.fine a.ct,.cta-ph-n,.alt a.ct,.cta-st-t,.ftr li a,.ftr a[href^="tel"],.ftr a[href^="mailto"]{display:inline-flex;align-items:center;min-height:44px}
+.cta-ph-n,.cta-st-t{padding-block:4px}
+}
