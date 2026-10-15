@@ -39,3 +39,13 @@ summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b
 .more-grid span{color:var(--muted)}
 @media(max-width:900px){.more-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.more-grid{grid-template-columns:minmax(0,1fr)}}
+/* smaller Award-winning section on the home page */
+.sec.awards{padding-block:clamp(32px,4.5vw,52px)}
+.sec.awards .h2{font-size:clamp(1.6rem,3.4vw,2.4rem)}
+.sec.awards .mq{margin-top:22px}
+.sec.awards .mq-track .acard{flex:0 0 190px;width:190px;padding:16px 10px 14px;gap:8px;border-radius:18px}
+.sec.awards .bwrap{height:88px}.sec.awards .bwrap img{max-height:88px}
+.sec.awards .acard b{font-size:1.15rem;margin-top:2px}
+.sec.awards .acard span{font-size:.78rem;line-height:1.3}
+.sec.awards .awards-foot{margin-top:18px;font-size:.85rem}
+@media(max-width:640px){.sec.awards .mq-track .acard{flex-basis:160px;width:160px}.sec.awards .bwrap{height:74px}.sec.awards .bwrap img{max-height:74px}}
