@@ -22,3 +22,5 @@ summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b
 .size .from{font-size:.74rem;letter-spacing:.02em}
 .est-price{font-size:.85rem}
 .bk-nm em small{font-size:.7rem;font-weight:600;opacity:.8;margin-right:4px}
+.mbar{gap:6px}.mbar .btn{min-width:0;padding:0 8px;font-size:.92rem;white-space:nowrap}
+@media(max-width:360px){.mbar{padding-inline:8px}.mbar .btn{padding:0 4px;font-size:.84rem}.mbar .btn .ic{display:none}}
