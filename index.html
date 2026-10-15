@@ -785,36 +785,155 @@ html{scroll-behavior:auto}
 @media (min-width:1100px){.hero{padding-block:80px 300px}}
 @media (min-width:768px) and (max-width:1099px){.hero{padding-block:70px 260px}}
 @media (max-width:767px){.hero{padding-block:62px 320px}}
+
+/* ===== header v2 + mega menu ===== */
+.topbar{background:#0b0f06;border-bottom:1px solid rgba(255,255,255,.1);font-size:.85rem;color:#d3dac6;display:none}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:38px}
+.tb-l{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#fff}
+.tb-stars{display:inline-flex;gap:1px;color:#f5a800}.tb-stars .ic{width:14px;height:14px}
+.tb-m{color:var(--lime);font-weight:600;letter-spacing:.02em}
+.tb-r{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#fff;min-height:38px}
+.tb-r:hover{color:var(--lime)}.tb-r .ic{width:16px;height:16px;color:var(--lime)}
+@media (min-width:1000px){.topbar{display:block}}
+.hdr{background:rgba(0,0,0,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.hdr .dnav{display:none!important}
+.hnav{display:none}
+.hdr-phone{display:none}
+.hdr-book{display:inline-flex}
+@media (min-width:1000px){
+.hnav{display:flex;align-items:center;gap:2px;margin-left:18px}
+.hnav>a,.hn-btn{position:relative;display:inline-flex;align-items:center;gap:6px;padding:10px 13px;border-radius:999px;color:#e6ebd9;font:600 .95rem var(--body);background:none;border:0;cursor:pointer;transition:color .2s,background .2s;min-height:44px}
+.hnav>a::after,.hn-btn::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;border-radius:2px;background:var(--lime);transform:scaleX(0);transition:transform .25s}
+.hnav>a:hover,.hn-btn:hover,.hn-btn[aria-expanded="true"]{color:var(--lime);background:rgba(163,194,66,.1)}
+.hnav>a:hover::after,.hn-btn:hover::after,.hn-btn[aria-expanded="true"]::after{transform:scaleX(1)}
+.hn-btn .ic{width:16px;height:16px;transition:transform .25s}
+.hn-btn[aria-expanded="true"] .ic{transform:rotate(180deg)}
+.hdr-phone{display:inline-flex;align-items:center;gap:8px;padding:0 16px;min-height:46px;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;color:#fff;font-weight:700;transition:background .2s,color .2s,border-color .2s}
+.hdr-phone:hover{background:#fff;color:#000;border-color:#fff}
+.hdr-phone .ic{width:18px;height:18px;color:var(--lime)}.hdr-phone:hover .ic{color:#000}
+.mnav{display:none!important}
+}
+@media (min-width:1000px) and (max-width:1180px){.hdr-phone{font-size:0;padding:0;width:46px;justify-content:center}.hdr-phone .ic{width:20px;height:20px}.hnav>a,.hn-btn{padding:10px 9px;font-size:.9rem}}
+/* mega panel */
+.mega{position:absolute;left:0;right:0;top:100%;background:#0c0f08;border-top:1px solid rgba(255,255,255,.1);border-bottom:3px solid var(--lime);box-shadow:0 30px 60px rgba(0,0,0,.55);animation:megain .22s ease both}
+.mega[hidden]{display:none}
+@keyframes megain{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.mega-in{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 290px;gap:28px;padding-block:30px 34px}
+.mh{font:800 .75rem/1 var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin:0 0 12px;padding:0 10px}
+.mcol{display:flex;flex-direction:column;gap:2px}
+.mi{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:14px;color:#fff;transition:background .2s,transform .2s}
+.mi:hover,.mi:focus-visible{background:rgba(163,194,66,.14);transform:translateX(4px)}
+.mi-ico{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(163,194,66,.14);color:var(--lime);display:grid;place-items:center;transition:background .2s,color .2s}
+.mi:hover .mi-ico{background:var(--lime);color:#000}
+.mi-ico .ic{width:20px;height:20px}
+.mi-tx b{display:flex;align-items:center;gap:8px;font-size:.96rem;line-height:1.2;font-weight:700}
+.mi-tx b em{font-style:normal;background:var(--lime);color:#000;font-size:.68rem;font-weight:800;letter-spacing:.04em;padding:3px 8px;border-radius:999px;text-transform:uppercase}
+.mi-tx small{display:block;color:#aab3a0;font-size:.82rem;line-height:1.3;margin-top:2px}
+.mfeat{position:relative;border-radius:22px;overflow:hidden;background:#000;display:flex;flex-direction:column;min-height:100%}
+.mfeat img{width:100%;height:150px;object-fit:cover}
+.mfeat-b{display:flex;flex-direction:column;gap:10px;padding:16px;align-items:stretch}
+.mfeat-b b{font:700 1.5rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:#fff}
+.mfeat-b span{color:#c9d1bd;font-size:.9rem;line-height:1.35}
+.mfeat-b .btn{min-height:46px;width:100%;padding:0 16px}
+@media (min-width:1000px) and (max-width:1150px){.mega-in{grid-template-columns:repeat(3,minmax(0,1fr));}.mfeat{display:none}}
+@media (max-width:999px){.mega{display:none!important}}
+/* mobile menu sheet */
+.mnav{position:static}
+.mnav .panel{position:absolute;left:0;right:0;top:100%;width:auto;max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow-y:auto;border-radius:0 0 24px 24px;border:0;border-top:1px solid rgba(255,255,255,.12);padding:18px 16px 22px;gap:0;background:#0c0f08;-webkit-overflow-scrolling:touch}
+.mnav .panel .mh{padding:0 4px;margin:6px 0 10px}
+.mnav .panel .mh:not(:first-child){margin-top:18px}
+.msv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mnav .msv a{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:14px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:.92rem;line-height:1.2}
+.mnav .msv a .ic{width:24px;height:24px;color:var(--lime)}
+.mnav .panel>a{display:flex;align-items:center;min-height:50px;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0;padding:0 4px;font-size:1.02rem}
+.mcta{display:grid;gap:10px;margin-top:20px}
+.mcta .btn{width:100%}
+@media (max-width:360px){.msv{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.mega{animation:none}}
+
+.tb-stars .ic{fill:currentColor;stroke:none}
+.mfeat img{flex:1 1 auto;height:auto;min-height:150px}
+.mfeat-b{flex:none}
+@media (max-width:999px){.mnav .panel{padding-bottom:104px}}
+
+/* services: second row */
+.svc-more-h{margin-top:64px}
+.svc-more-h h3{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1;margin-top:10px}
+.svc-more3{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:26px}
+@media (min-width:760px){.svc-more3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.mcard{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:28px 26px 26px;border-radius:28px;background:linear-gradient(150deg,#0a0f06 0%,#1a2410 55%,#3c4a10 100%);color:#fff;transition:transform .3s,box-shadow .3s}
+.mcard.c-lights{background:linear-gradient(150deg,#000 0%,#10150a 45%,#4d5f16 100%)}
+.mcard.c-pick{background:linear-gradient(150deg,#0b0f06 0%,#232f0e 55%,#5d7a1c 100%)}
+.mcard:hover{transform:translateY(-6px);box-shadow:0 26px 54px rgba(39,50,10,.3)}
+.mcard .mc-wm{position:absolute;right:-26px;bottom:-30px;opacity:.09;pointer-events:none;transition:transform .6s}
+.mcard .mc-wm .ic{width:190px;height:190px;stroke-width:1.2}
+.mcard:hover .mc-wm{transform:rotate(-10deg) scale(1.08)}
+.mcard .ico{width:60px;height:60px;border-radius:20px;background:var(--lime);color:#000;display:grid;place-items:center;transition:transform .3s}
+.mcard:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.mcard .ico .ic{width:28px;height:28px}
+.mcard .mc-tag{font:800 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-top:8px}
+.mcard h3{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:2rem;line-height:1}
+.mcard p:not(.mc-tag){color:var(--mist);flex:1}
+.mcard .btn{margin-top:8px;position:relative}
+.mcard .btn .ic{width:20px;height:20px}
+
+@media (min-width:900px){.svc-rows .scard h3{padding-right:88px}.svc-rows .scard .ico{width:62px;height:62px;border-radius:20px}}
 </style>
 </head>
 <body>
 <div class="jm" id="top">
 
+<div class="topbar on-dark"><div class="wrap topbar-in">
+  <span class="tb-l"><span class="tb-stars" aria-hidden="true"><svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg><svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg><svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg><svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg><svg class="ic fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg></span>5.0 on Google · 300+ reviews</span>
+  <span class="tb-m">Family and locally owned in Calgary</span>
+  <a class="tb-r ct" href="tel:+14037977145" aria-haspopup="dialog"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call or text (403) 797-7145</a>
+</div></div>
 <header class="hdr on-dark">
   <div class="wrap hdr-in">
     <a class="logo" href="#top" aria-label="The Junk Man, back to top"><img src="assets/img/logo.png" alt="The Junk Man Junk Removal" width="900" height="460"></a>
-    <nav class="dnav" aria-label="Main">
-      <a href="#services">Services</a>
+    <nav class="hnav" aria-label="Main">
+      <button type="button" class="hn-btn" id="mega-btn" aria-expanded="false" aria-controls="mega" aria-haspopup="true">Services<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m6 9 6 6 6-6"/></svg></button>
       <a href="#pricing">Pricing</a>
+      <a href="#results">Our work</a>
       <a href="#pickup">Garbage Pickup</a>
       <a href="#winter">Winter</a>
       <a href="#contact">Contact</a>
     </nav>
     <span class="hdr-sp"></span>
-    <a class="ct hdr-phone" href="tel:+14037977145" aria-haspopup="dialog"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call or text</a>
-    <a class="btn btn-lime btn-sm" href="https://www.calgaryjunkman.com/book-now/">Book Now</a>
+    <a class="hdr-phone ct" href="tel:+14037977145" aria-haspopup="dialog"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call or text</a>
+    <a class="btn btn-lime btn-sm hdr-book" href="https://www.calgaryjunkman.com/book-now/">Book Now</a>
     <details class="mnav">
       <summary aria-label="Menu"><svg class="ic i-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic i-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></summary>
       <nav class="panel" aria-label="Menu">
-        <a href="#services">Services</a>
+        <p class="mh">Our services</p>
+        <div class="msv"><a href="#services"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg>Junk removal</a><a href="#services"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.7a1 1 0 0 0-.2-.6l-3-3.7a1 1 0 0 0-.8-.4H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>Moving and hauling</a><a href="#services"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>Commercial cleanouts</a><a href="#winter"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/><path d="m9 3 3 2 3-2M9 21l3-2 3 2"/></svg>Snow removal</a><a href="#winter"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>Holiday and permanent lighting</a><a href="#pickup"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>Recurring garbage pickup</a></div>
+        <p class="mh">Explore</p>
         <a href="#pricing">Pricing</a>
-        <a href="#quote">Get a Photo Quote</a>
-        <a href="#pickup">Garbage Pickup</a>
-        <a href="#winter">Winter Services</a>
+        <a href="#results">Our work</a>
+        <a href="#take">What we take</a>
         <a href="#contact">Contact</a>
+        <div class="mcta">
+          <a class="btn btn-lime" href="https://www.calgaryjunkman.com/book-now/">Book Now Online</a>
+          <a class="btn btn-ghost ct" href="tel:+14037977145" aria-haspopup="dialog"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call or text</a>
+          <a class="btn btn-ghost" href="#quote">Free photo quote</a>
+        </div>
       </nav>
     </details>
   </div>
+  <div class="mega" id="mega" role="menu" aria-label="Services" hidden>
+  <div class="wrap mega-in">
+    <div class="mcol"><p class="mh">Junk removal</p><a class="mi" href="#services" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg></span><span class="mi-tx"><b>Junk removal</b><small>Homes, garages, yards and offices</small></span></a><a class="mi" href="#take" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span class="mi-tx"><b>Furniture and mattresses</b><small>Couches, beds, tables and more</small></span></a><a class="mi" href="#take" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span class="mi-tx"><b>Appliances and e-waste</b><small>Fridges, washers, TVs and more</small></span></a><a class="mi" href="#take" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span class="mi-tx"><b>Hot tubs and heavy items</b><small>Hot tubs, pianos, concrete</small></span></a><a class="mi" href="#take" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span class="mi-tx"><b>Construction and yard waste</b><small>Debris, branches, pallets</small></span></a><a class="mi" href="#take" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span class="mi-tx"><b>Estate and foreclosure cleanouts</b><small>Full property clear outs</small></span></a></div><div class="mcol"><p class="mh">Moving and commercial</p><a class="mi" href="#services" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.7a1 1 0 0 0-.2-.6l-3-3.7a1 1 0 0 0-.8-.4H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span><span class="mi-tx"><b>Moving and hauling</b><small>Local and long distance</small></span></a><a class="mi" href="#services" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><span class="mi-tx"><b>Commercial cleanouts<em>15% off</em></b><small>Offices, rentals and units</small></span></a><a class="mi" href="#services" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><span class="mi-tx"><b>Realtors and landlords</b><small>Quick turnarounds, same-day pickups</small></span></a><a class="mi" href="#pricing" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.2"/></svg></span><span class="mi-tx"><b>Pricing</b><small>Upfront prices, no surprises</small></span></a><a class="mi" href="#results" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg></span><span class="mi-tx"><b>Before and after</b><small>Photos from recent jobs</small></span></a></div><div class="mcol"><p class="mh">Seasonal and recurring</p><a class="mi" href="#winter" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/><path d="m9 3 3 2 3-2M9 21l3-2 3 2"/></svg></span><span class="mi-tx"><b>Snow removal</b><small>Clear driveways and walkways</small></span></a><a class="mi" href="#winter" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="mi-tx"><b>Holiday and permanent lighting</b><small>Installed and taken down for you</small></span></a><a class="mi" href="#pickup" role="menuitem"><span class="mi-ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><span class="mi-tx"><b>Recurring garbage pickup</b><small>Every second week, from $36 a month</small></span></a></div>
+    <aside class="mfeat">
+      <img src="assets/img/photo-03.jpg" alt="The Junk Man crew carrying a large wooden crate" width="840" height="630" loading="lazy">
+      <div class="mfeat-b">
+        <b>Not sure what you need?</b>
+        <span>Send photos and get a free quote.</span>
+        <a class="btn btn-lime btn-sm" href="#quote">Free photo quote<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-sm ct" href="tel:+14037977145" aria-haspopup="dialog"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call or text</a>
+      </div>
+    </aside>
+  </div>
+</div>
 </header>
 
 <main>
@@ -927,11 +1046,32 @@ html{scroll-behavior:auto}
         </div>
       </article>
     </div>
-    <div class="more-svc rv">
-      <b>Looking for something else?</b>
-      <a href="#winter"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="m9.5 4 2.5 2 2.5-2M9.5 20l2.5-2 2.5 2"/></svg>Snow removal</a>
-      <a href="#winter"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Holiday and permanent lighting</a>
-      <a href="#pickup"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6M14 11v6"/></svg>Recurring garbage pickup</a>
+    <div class="svc-more-h rv"><p class="eyebrow">Also from The Junk Man</p><h3>Seasonal and recurring services</h3></div>
+    <div class="svc-more3">
+      <article class="mcard c-snow on-dark rv">
+        <span class="mc-wm" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/><path d="m9 3 3 2 3-2M9 21l3-2 3 2"/></svg></span>
+        <span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/><path d="m9 3 3 2 3-2M9 21l3-2 3 2"/></svg></span>
+        <p class="mc-tag">Free quote from a photo</p>
+        <h3>Snow removal</h3>
+        <p>Wake up to a clear driveway and walkway. Local, reliable and easy to book.</p>
+        <a class="btn btn-lime" href="#quote" data-service="Snow removal">Get a snow quote<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </article>
+      <article class="mcard c-lights on-dark rv">
+        <span class="mc-wm" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span>
+        <span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span>
+        <p class="mc-tag">Free quote from a photo</p>
+        <h3>Holiday and permanent lighting</h3>
+        <p>Light up your home for the season, or put lights up once and enjoy them all year.</p>
+        <a class="btn btn-lime" href="#quote" data-service="Holiday lighting">Get a lighting quote<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </article>
+      <article class="mcard c-pick on-dark rv">
+        <span class="mc-wm" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>
+        <span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>
+        <p class="mc-tag">From $36 a month</p>
+        <h3>Recurring garbage pickup</h3>
+        <p>Garbage pickup on the weeks the City does not collect your black bin. No contract.</p>
+        <a class="btn btn-lime" href="#pickup">See the plans<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </article>
     </div>
   </div>
 </section>
@@ -1505,6 +1645,19 @@ function start(){if(reduce||t)return;t=setInterval(function(){show((cur+1)%figs.
 function stop(){if(t){clearInterval(t);t=null}btns.forEach(function(b){var bar=b.querySelector('i');bar.style.transition='none';});}
 show(0);
 if('IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){start()}else if(t){clearInterval(t);t=null}})},{threshold:.3}).observe(j);}
+})();
+
+(function(){
+var btn=document.getElementById('mega-btn'),mg=document.getElementById('mega');if(!btn||!mg)return;
+var t=null,hov=window.matchMedia&&matchMedia('(hover:hover)').matches;
+function open(){clearTimeout(t);mg.hidden=false;btn.setAttribute('aria-expanded','true');}
+function close(){clearTimeout(t);mg.hidden=true;btn.setAttribute('aria-expanded','false');}
+function later(){clearTimeout(t);t=setTimeout(close,180);}
+btn.addEventListener('click',function(){mg.hidden?open():close();});
+if(hov){[btn,mg].forEach(function(e){e.addEventListener('mouseenter',open);e.addEventListener('mouseleave',later);});}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mg.hidden){close();btn.focus();}});
+document.addEventListener('click',function(e){if(mg.hidden)return;if(!e.target.closest('#mega')&&!e.target.closest('#mega-btn'))close();if(e.target.closest('#mega a'))close();});
+window.addEventListener('resize',function(){if(window.innerWidth<1000)close();});
 })();
 </script>
 </body>
