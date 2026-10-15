@@ -16,3 +16,9 @@
 .qrev figcaption b{color:var(--text)}
 .upto{font-size:.62em;font-weight:600;text-transform:none;letter-spacing:0;opacity:.7;margin-right:.1em}
 .upto-c{font-size:1.05rem;font-weight:600;opacity:.7;margin-bottom:6px}
+/* client note: titles in capitals; Starting At stays small */
+summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b,.ct-c b,.est-size{text-transform:uppercase}
+.size .from,.est-price{text-transform:none}
+.size .from{font-size:.74rem;letter-spacing:.02em}
+.est-price{font-size:.85rem}
+.bk-nm em small{font-size:.7rem;font-weight:600;opacity:.8;margin-right:4px}
