@@ -1,0 +1,16 @@
+.qgrid>.rv:first-child{display:flex;flex-direction:column}
+.qproof{margin-top:30px;display:grid;gap:16px}
+.qg{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(163,194,66,.45)}
+.qg img{width:58px;height:auto;flex:none;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
+.qg .qg-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.qg .qg-s{display:inline-flex;gap:2px;color:var(--lime)}
+.qg .qg-s .ic{width:18px;height:18px;fill:currentColor;stroke:none}
+.qg b{color:#fff;font-size:1.05rem;line-height:1.2}
+.qg small{color:var(--mist);font-size:.88rem}
+.qrev{margin:0;padding:22px 24px;border-radius:22px;background:#fff;color:var(--text);position:relative}
+.qrev::before{content:"\201C";position:absolute;right:20px;top:-6px;font-family:var(--display);font-size:5rem;line-height:1;color:var(--lime)}
+.qrev .qg-s{display:inline-flex;gap:2px;color:#8aa62a;margin-bottom:8px}
+.qrev .qg-s .ic{width:16px;height:16px;fill:currentColor;stroke:none}
+.qrev blockquote{margin:0;font-weight:600;font-size:1.02rem;line-height:1.5;color:var(--text)}
+.qrev figcaption{margin-top:12px;font-size:.88rem;color:var(--muted)}
+.qrev figcaption b{color:var(--text)}

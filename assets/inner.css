@@ -201,3 +201,71 @@ a.ip-card{transition:transform .25s,box-shadow .25s}a.ip-card:hover{transform:tr
 .bento{margin-top:34px}
 .bt{text-decoration:none}
 @media(prefers-reduced-motion:reduce){.truck i{transition:none}}
+/* ---- round 2 ---- */
+.ip-whyw{display:grid;gap:36px;align-items:start}
+@media(min-width:1000px){.ip-whyw{grid-template-columns:.8fr 1.2fr;gap:64px}.ip-why-l{position:sticky;top:130px}}
+.ip-why{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));align-items:stretch}
+.ip-wc{display:flex;flex-direction:column;gap:12px;padding:28px 26px 24px;border-radius:26px;background:var(--paper);border:1px solid var(--line);transition:transform .3s,box-shadow .3s,border-color .3s}
+.ip-wc:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(20,30,5,.14);border-color:var(--lime)}
+.ip-wc .wi{width:64px;height:64px;border-radius:20px;background:var(--lime);display:grid;place-items:center;color:#000;box-shadow:0 10px 24px rgba(163,194,66,.45)}
+.ip-wc .wi .ic{width:32px;height:32px}
+.ip-wc h3{font-family:var(--display);font-size:1.8rem;text-transform:uppercase;line-height:1;font-weight:700;margin-top:8px}
+.ip-wc p{color:var(--muted);flex:1}
+.ip-wc em{align-self:flex-start;font-style:normal;font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;background:#000;color:var(--lime);padding:8px 14px;border-radius:999px;margin-top:6px}
+/* process */
+.ip-proc{list-style:none;margin:44px 0 0;padding:0;display:grid;gap:34px;position:relative}
+.ip-proc li{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:96px;min-height:76px}
+.ip-proc .pi{position:absolute;left:0;top:0;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#0e1507;border:2px solid var(--lime);color:var(--lime);box-shadow:0 0 0 8px rgba(163,194,66,.12),0 0 40px rgba(163,194,66,.25);z-index:1}
+.ip-proc .pi .ic{width:32px;height:32px}
+.ip-proc li::after{content:"";position:absolute;left:37px;top:84px;bottom:-28px;border-left:2px dashed rgba(163,194,66,.55)}
+.ip-proc li:last-child::after{display:none}
+.ip-proc b{font-family:var(--display);font-size:1.9rem;text-transform:uppercase;line-height:1;margin-top:6px}
+.ip-proc .pd{color:var(--mist);max-width:44ch}
+@media(min-width:860px){
+ .ip-proc{grid-template-columns:repeat(3,1fr);gap:24px}
+ .ip-proc li{padding-left:0;align-items:center;text-align:center;padding-top:104px;min-height:0}
+ .ip-proc .pi{left:50%;transform:translateX(-50%);width:84px;height:84px}
+ .ip-proc li::after{left:calc(50% + 62px);right:calc(-50% + 62px);top:42px;bottom:auto;border-left:0;border-top:2px dashed rgba(163,194,66,.55);height:0;animation:procflow 1.4s linear infinite}
+ .ip-proc li:not(:last-child) .pd::after{content:none}
+ .ip-proc .pd{max-width:30ch}
+}
+@keyframes procflow{to{border-top-color:rgba(163,194,66,.9)}}
+/* review slider */
+.ip-mq{position:relative;overflow:hidden;margin-top:34px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ip-mq-track{display:flex;gap:16px;width:max-content;animation:rvmove 90s linear infinite;padding:6px 0}
+.ip-mq:hover .ip-mq-track,.ip-mq:focus-within .ip-mq-track{animation-play-state:paused}
+.ip-mq .mq-card{flex:0 0 340px;width:340px;margin:0;box-shadow:0 10px 28px rgba(20,30,5,.08)}
+@keyframes rvmove{to{transform:translateX(calc(-50% - 8px))}}
+@media(max-width:600px){.ip-mq .mq-card{flex-basis:290px;width:290px}}
+@media(prefers-reduced-motion:reduce){.ip-mq{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.ip-mq-track{animation:none}}
+.ip-mq .mq-card blockquote{flex:1}
+/* CTA card */
+.ip-cta{background:#fff;padding-block:clamp(40px,6vw,70px);color:#fff}
+.ip-cta-card{position:relative;overflow:hidden;display:grid;gap:30px;padding:clamp(28px,5vw,60px);border-radius:36px;background:radial-gradient(700px 360px at 100% 0%,rgba(163,194,66,.35),transparent 65%),linear-gradient(135deg,#0a0f06,#1c2a0b 60%,#34480f);box-shadow:0 30px 80px rgba(20,30,5,.35)}
+@media(min-width:960px){.ip-cta-card{grid-template-columns:1.3fr .7fr;align-items:center;gap:56px}}
+.ip-cta-wm{position:absolute;right:-30px;bottom:-50px;width:360px;height:360px;color:rgba(163,194,66,.08);pointer-events:none}
+.ip-cta-wm .ic{width:100%;height:100%;stroke-width:1}
+.ip-cta-l,.ip-cta-r{position:relative;z-index:1}
+.ip-cta h2{font-family:var(--display);font-size:clamp(2.6rem,7vw,4.4rem);text-transform:uppercase;line-height:.92;font-weight:800;margin-top:12px;color:#fff}
+.ip-cta-p{color:var(--mist);font-size:1.1rem;max-width:46ch;margin-top:14px}
+.ip-cta-t{list-style:none;margin:20px 0 26px;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.ip-cta-t li{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#fff}
+.ip-cta-t .ic{width:22px;height:22px;padding:3px;border-radius:50%;background:var(--lime);color:#000}
+.ip-cta-r{display:flex;flex-direction:column;gap:6px;padding:30px;border-radius:28px;background:rgba(255,255,255,.07);border:1px solid rgba(163,194,66,.45);backdrop-filter:blur(6px);color:#fff;transition:transform .3s,border-color .3s,background .3s}
+.ip-cta-r:hover{transform:translateY(-4px);border-color:var(--lime);background:rgba(255,255,255,.11)}
+.ip-cta-r .ph-ic{width:60px;height:60px;border-radius:18px;background:var(--lime);display:grid;place-items:center;color:#000;margin-bottom:10px;animation:ringp 2.4s ease-in-out infinite}
+.ip-cta-r .ph-ic .ic{width:28px;height:28px}
+.ip-cta-r small{color:var(--lime);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+.ip-cta-r b{font-family:var(--display);font-size:clamp(2.2rem,5vw,3rem);line-height:1;font-weight:800;white-space:nowrap}
+.ip-cta-r .hint{color:var(--mist);font-size:.92rem}
+@keyframes ringp{0%,100%{box-shadow:0 0 0 0 rgba(163,194,66,.5)}50%{box-shadow:0 0 0 14px rgba(163,194,66,0)}}
+@media(prefers-reduced-motion:reduce){.ip-cta-r .ph-ic,.ip-proc li::after{animation:none}}
+.ip-cta-card{grid-template-columns:minmax(0,1fr)}
+@media(min-width:960px){.ip-cta-card{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}}
+.ip-cta-r b{font-size:clamp(1.9rem,8vw,3rem);white-space:normal}
+@media(min-width:960px){.ip-cta-r b{font-size:clamp(1.8rem,2.6vw,2.6rem);white-space:nowrap}}
+.ip-cta-l{min-width:0}
+.ip-cta-r b{font-size:clamp(1.55rem,6.6vw,3rem);white-space:nowrap}
+@media(min-width:960px){.ip-cta-r b{font-size:clamp(1.8rem,2.6vw,2.6rem)}}
+.ip-g{flex-wrap:nowrap;white-space:nowrap}
+.ip-g small{white-space:nowrap}
