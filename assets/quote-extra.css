@@ -55,3 +55,4 @@ summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b
 .ip-more a,.wh-a,.fine a.ct,.cta-ph-n,.alt a.ct,.cta-st-t,.ftr li a,.ftr a[href^="tel"],.ftr a[href^="mailto"]{display:inline-flex;align-items:center;min-height:44px}
 .cta-ph-n,.cta-st-t{padding-block:4px}
 }
+.wtt{min-width:0}.wtt b{overflow-wrap:anywhere;font-size:clamp(1rem,1.9vw,1.35rem)}
