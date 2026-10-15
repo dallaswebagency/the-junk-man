@@ -269,3 +269,27 @@ a.ip-card{transition:transform .25s,box-shadow .25s}a.ip-card:hover{transform:tr
 @media(min-width:960px){.ip-cta-r b{font-size:clamp(1.8rem,2.6vw,2.6rem)}}
 .ip-g{flex-wrap:nowrap;white-space:nowrap}
 .ip-g small{white-space:nowrap}
+/* who we help cards */
+.wh-grid{display:grid;gap:18px;margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:stretch}
+.wh{display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.wh:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(20,30,5,.16)}
+.wh-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.wh-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.wh:hover .wh-img img{transform:scale(1.06)}
+.wh-tag{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--lime);color:#000;font-weight:800;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.wh-tag .ic{width:18px;height:18px}
+.wh-b{display:flex;flex-direction:column;gap:12px;padding:26px 26px 28px;flex:1}
+.wh h3{font-family:var(--display);font-size:2.2rem;text-transform:uppercase;line-height:1;font-weight:800}
+.wh-i{color:var(--muted)}
+.wh ul{list-style:none;margin:4px 0 8px;padding:0;display:grid;gap:10px}
+.wh li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:.97rem}
+.wh li .ic{width:24px;height:24px;padding:4px;border-radius:50%;background:var(--lime);color:#000}
+.wh-a{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--green-deep)}
+.wh-a:hover{text-decoration:underline}
+.wh.dark{background:linear-gradient(160deg,#0a0f06,#1d2c0b 65%,#34480f);color:#fff;border-color:rgba(163,194,66,.4)}
+.wh.dark .wh-i{color:var(--mist)}.wh.dark .wh-a{color:var(--lime)}
+.wh-big{position:relative;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.wh-big b{font-family:var(--display);font-size:clamp(5rem,12vw,7.5rem);line-height:1;font-weight:800;color:var(--lime);position:relative;z-index:1}
+.wh-big span{position:absolute;right:-30px;bottom:-40px;width:240px;height:240px;color:rgba(163,194,66,.12)}
+.wh-big span .ic{width:100%;height:100%;stroke-width:1}
+@media(max-width:430px){.ip-g{flex-wrap:wrap;white-space:normal;gap:6px 10px;max-width:100%}.ip-g small{white-space:normal}}
