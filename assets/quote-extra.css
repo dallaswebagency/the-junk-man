@@ -56,3 +56,48 @@ summary,.pbl,.size b,#cta-h,.bk-nm b,.bk-perk b,.bk-tk-steps b,.ip-rel b,.rp-o b
 .cta-ph-n,.cta-st-t{padding-block:4px}
 }
 .wtt{min-width:0}.wtt b{overflow-wrap:anywhere;font-size:clamp(1rem,1.9vw,1.35rem)}
+
+/* ---- image crop fixes: keep logos, faces and BEFORE/AFTER labels in frame ---- */
+.ph-media img,.ip-sp-img img,.si-img{aspect-ratio:3/2}
+.rp-t{aspect-ratio:3/2}
+.wk-grid,.wk-grid.flat{grid-template-columns:1fr!important;grid-auto-rows:auto!important;gap:16px!important}
+@media(min-width:700px){.wk-grid,.wk-grid.flat{grid-template-columns:repeat(2,1fr)!important}}
+.wk-grid .wk,.wk-grid.flat .wk{grid-column:auto!important;grid-row:auto!important;aspect-ratio:1000/658;min-height:0!important}
+.wk .lb{position:absolute;inset:0}
+.wk img{object-position:50% 50%}
+.wk figcaption{padding:36px 18px 14px}
+.wk figcaption b{font-size:clamp(1.2rem,2.6vw,1.6rem)}
+/* focal points for forced crops (heroes, tiles) */
+img[src*="bedroom-cleanout"]{object-position:50% 35%}
+img[src*="commercial-kitchen"]{object-position:50% 30%}
+img[src*="eco-friendly-garbage"]{object-position:50% 30%}
+img[src*="furniture-removal-sofa"]{object-position:58% 40%}
+img[src*="garbage-bag-pickup"]{object-position:50% 40%}
+img[src*="junk-removal-crew-team"]{object-position:50% 35%}
+img[src*="moving-hauling-dresser"]{object-position:50% 40%}
+img[src*="residential-cleanout"]{object-position:50% 35%}
+img[src*="what-we-take-garbage"]{object-position:42% 40%}
+img[src*="why-choose-the-junk-man-crew"]{object-position:55% 40%}
+img.hero-bg-img[src*="photo-01"]{object-position:30% 70%}
+@media(min-width:768px){img.hero-bg-img[src*="photo-01"]{object-position:38% 70%}}
+@media(min-width:1100px){img.hero-bg-img[src*="photo-01"]{object-position:50% 70%}}
+img[src*="photo-11"]{object-position:50% 62%}
+/* mobile heroes: show the whole photo (no crop) above the text */
+@media(max-width:767px){
+ .hero{display:block!important;padding-block:0 150px!important;min-height:0!important}
+ .hero .hero-bg-img{position:relative!important;inset:auto!important;z-index:0!important;display:block;width:100%!important;height:auto!important;aspect-ratio:4/3;object-position:50% 50%!important}
+ .hero .hero-scrim,.hero::after{display:none!important}
+ .hero .hero-grid{padding-top:26px}
+ .ph.v-center{padding-top:0!important}
+ .ph.v-center .ph-bg{position:relative!important;inset:auto!important;display:block;aspect-ratio:3/2;margin-bottom:26px}
+ .ph.v-center .ph-bg::after{background:linear-gradient(180deg,transparent 60%,#000)}
+ .ph.v-center .ph-bgimg{opacity:1!important;position:absolute}
+ .ph.v-center .ph-bg::after{background:linear-gradient(180deg,transparent 65%,#000)!important}
+}
+img{height:auto}
+.rp-t{aspect-ratio:3/2!important}
+.bk-help img{height:auto!important;aspect-ratio:3/2}
+.cta-pho-i img{object-position:50% 35%}
+.bt-img img[src*="moving-hauling"]{object-position:75% 40%}
+.sa{font-size:.62em;font-weight:600;text-transform:none;letter-spacing:0;opacity:.8;margin-right:.15em;white-space:nowrap}
+.tk-s .upto-b{font-family:var(--display);font-size:1.1rem;font-weight:600;text-transform:none;opacity:.75;margin-bottom:6px}
