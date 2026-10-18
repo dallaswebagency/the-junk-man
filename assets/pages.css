@@ -80,3 +80,24 @@
 .dp-table thead th{background:var(--ink);color:#fff;font:700 .85rem var(--body);letter-spacing:.08em;text-transform:uppercase}
 .dp-table tbody th{font:700 1.3rem var(--display);text-transform:uppercase}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+@media (max-width:720px){
+.dp-table{min-width:0;display:block;background:none;border:0;border-radius:0}
+.dp-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.dp-table tbody{display:grid;gap:14px}
+.dp-table tr{display:block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 18px 10px}
+.dp-table tbody th{display:block;border-bottom:1px solid var(--line);padding:14px 0 12px;font-size:1.45rem}
+.dp-table td{display:grid;grid-template-columns:minmax(92px,34%) 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.98rem;line-height:1.45}
+.dp-table td:last-child{border-bottom:0}
+.dp-table td::before{content:attr(data-label);font:700 .72rem var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--green-deep);padding-top:3px}
+}
+/* .wk is also the gallery card class in inner2.css; keep the week label a small tag inside the cycle diagram */
+.cycle li .wk{position:static;min-height:0;margin:0;overflow:visible;border-radius:8px;display:inline-block}
+/* awards hero: keep the three badges inside the phone width without overlapping */
+@media (max-width:600px){.aw-hero{height:210px}.aw-hero .ah0{width:100px;left:0;top:44px}.aw-hero .ah1{width:122px;left:calc(50% - 61px);top:0}.aw-hero .ah2{width:108px;right:0;top:50px}}
+/* dark FAQ headings must stay light; finder tiles must not split words on small phones */
+.ip-faq.fv-dark .h2,.ip-faq.fv-dark h2{color:#fff}
+@media (max-width:480px){.wtt{padding:16px;min-height:132px}.wtt b{font-size:1.1rem;overflow-wrap:normal;word-break:normal;hyphens:none}}
+/* mobile menu: lime button keeps dark text (panel link colour was turning it white) */
+.mnav .panel .mcta .btn-lime,.mnav .panel .mcta .btn-lime:hover{color:#000}
+@media (max-width:400px){.wtt b{font-size:1rem}}

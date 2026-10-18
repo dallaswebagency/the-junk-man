@@ -93,7 +93,7 @@ var t=null,hov=window.matchMedia&&matchMedia('(hover:hover)').matches;
 function open(){clearTimeout(t);mg.hidden=false;btn.setAttribute('aria-expanded','true');}
 function close(){clearTimeout(t);mg.hidden=true;btn.setAttribute('aria-expanded','false');}
 function later(){clearTimeout(t);t=setTimeout(close,180);}
-btn.addEventListener('click',function(){mg.hidden?open():close();});
+btn.addEventListener('click',function(e){if(hov&&e.detail>0){open();return;}mg.hidden?open():close();});
 if(hov){[btn,mg].forEach(function(e){e.addEventListener('mouseenter',open);e.addEventListener('mouseleave',later);});}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mg.hidden){close();btn.focus();}});
 document.addEventListener('click',function(e){if(mg.hidden)return;if(!e.target.closest('#mega')&&!e.target.closest('#mega-btn'))close();if(e.target.closest('#mega a'))close();});

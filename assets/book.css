@@ -39,7 +39,7 @@
 .bk-stp button{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fff;color:var(--ink);font:700 22px/1 var(--body);cursor:pointer;display:grid;place-items:center;padding:0}
 .bk-stp button.p{background:var(--lime)}.bk-stp button:disabled{opacity:.35;cursor:default}
 .bk-stp output{min-width:26px;text-align:center;font-weight:800;font-size:1.2rem}
-.bk-add{font:inherit;font-weight:800;cursor:pointer;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:10px 18px}.bk-add[aria-pressed=true]{background:var(--ink);color:var(--lime)}
+.bk-add{white-space:nowrap;font:inherit;font-weight:800;cursor:pointer;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:10px 18px}.bk-add[aria-pressed=true]{background:var(--ink);color:var(--lime)}
 .bk-rt{grid-column:1/-1;font-weight:700;color:var(--green-deep);font-size:.92rem}
 .bk-card{background:#fff;border:3px solid var(--ink);border-radius:var(--r);box-shadow:0 6px 0 var(--ink);padding:26px;margin-bottom:6px}
 .bk-custom{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}.bk-custom b{font-size:1.2rem}.bk-custom span{color:var(--muted)}
