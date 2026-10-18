@@ -78,9 +78,9 @@ img[src*="moving-hauling-dresser"]{object-position:50% 40%}
 img[src*="residential-cleanout"]{object-position:50% 35%}
 img[src*="what-we-take-garbage"]{object-position:42% 40%}
 img[src*="why-choose-the-junk-man-crew"]{object-position:55% 40%}
-img.hero-bg-img[src*="photo-01"]{object-position:30% 70%}
-@media(min-width:768px){img.hero-bg-img[src*="photo-01"]{object-position:38% 70%}}
-@media(min-width:1100px){img.hero-bg-img[src*="photo-01"]{object-position:50% 70%}}
+img.hero-bg-img[src*="hero-junk-man"]{object-position:72% 70%}
+@media(min-width:768px){img.hero-bg-img[src*="hero-junk-man"]{object-position:68% 70%}}
+@media(min-width:1100px){img.hero-bg-img[src*="hero-junk-man"]{object-position:62% 70%}}
 img[src*="photo-11"]{object-position:50% 62%}
 /* mobile heroes: show the whole photo (no crop) above the text */
 @media(max-width:767px){

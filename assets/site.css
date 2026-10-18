@@ -587,7 +587,7 @@ html{scroll-behavior:auto}
 @media (max-width:767px){.ftr{padding-bottom:calc(28px + 84px)}}
 
 /* v2: logo, awards slider, call-or-text, caps */
-.logo img{height:58px;width:auto;aspect-ratio:900/460}
+.logo img{height:58px;width:auto;aspect-ratio:800/390}
 .ftr .logo img{height:104px}
 @media (max-width:900px){.logo img{height:48px}.ftr .logo img{height:92px}}
 @media (max-width:420px){.logo img{height:42px}}
