@@ -101,3 +101,15 @@
 /* mobile menu: lime button keeps dark text (panel link colour was turning it white) */
 .mnav .panel .mcta .btn-lime,.mnav .panel .mcta .btn-lime:hover{color:#000}
 @media (max-width:400px){.wtt b{font-size:1rem}}
+
+/* pricing revisions */
+.bars li{grid-template-columns:150px 1fr 118px}
+.pbl small{display:block;font-weight:500;font-size:.72rem;letter-spacing:.02em;text-transform:none;color:var(--muted);margin-top:2px}
+.bars b small{display:block;font:600 .68rem var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+@media(max-width:520px){.bars li{grid-template-columns:104px 1fr 84px}.bars b{font-size:1.4rem}}
+.pt-two{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));margin-top:34px}
+.pt-two .ecard h3{font-size:1.45rem}
+.est-info{margin:28px 0 8px;padding:24px 26px;border-radius:22px;background:var(--tint);display:grid;gap:10px}
+.est-info h3{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;line-height:1.1}
+.est-info p{color:var(--ink)}
+.fineprint-l dt{text-transform:uppercase}

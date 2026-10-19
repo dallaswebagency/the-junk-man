@@ -13,6 +13,11 @@ if(f)f.addEventListener('submit',function(e){e.preventDefault();var s=document.g
 document.querySelectorAll('[data-est]').forEach(function(w){var b=w.querySelectorAll('[role=radio]'),sz=w.querySelector('.est-size'),pr=w.querySelector('.est-price b'),fi=w.querySelector('.truck i');
  function set(x){b.forEach(function(y){y.setAttribute('aria-checked',y===x?'true':'false');y.tabIndex=y===x?0:-1;});sz.textContent=x.dataset.l;pr.textContent=x.dataset.p;w.querySelector('.est-price').firstChild.nodeValue=x.dataset.pre+' ';fi.style.setProperty('--f',x.dataset.f+'%');}
  b.forEach(function(x,i){x.addEventListener('click',function(){set(x);});x.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowRight'||k==='ArrowDown')n=b[(i+1)%b.length];if(k==='ArrowLeft'||k==='ArrowUp')n=b[(i-1+b.length)%b.length];if(n){e.preventDefault();n.focus();set(n);}});});});
+// estimator -> quote form: carry the selected load size
+document.querySelectorAll('[data-est]').forEach(function(w){var cta=w.querySelector('[data-getquote]');if(!cta)return;
+ cta.addEventListener('click',function(){var on=w.querySelector('[role=radio][aria-checked=true]'),sel=document.getElementById('q-size');if(!on||!sel)return;var want=on.dataset.l.toLowerCase();
+  for(var i=0;i<sel.options.length;i++){if(sel.options[i].text.toLowerCase()===want){sel.selectedIndex=i;break;}}
+  var q=document.getElementById('quote');if(q){setTimeout(function(){var n=document.getElementById('q-name');if(n)n.focus({preventScroll:true});},700);}});});
 // item finder
 document.querySelectorAll('[data-wt]').forEach(function(w){var q=w.querySelector('input'),ch=w.querySelectorAll('.wt-chips button'),li=w.querySelectorAll('.wt-grid li'),em=w.querySelector('.wt-empty'),cat='all';
  function upd(){var t=q.value.trim().toLowerCase(),n=0;li.forEach(function(x){var ok=(cat==='all'||x.dataset.c===cat)&&(!t||x.dataset.t.indexOf(t)>-1);x.hidden=!ok;if(ok)n++;});em.hidden=n>0;}
