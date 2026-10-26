@@ -984,3 +984,5 @@ html{scroll-behavior:auto}
 }
 
 .ftr li a[href^="mailto"]{white-space:nowrap;font-size:clamp(.82rem,3.6vw,1rem)}@media (min-width:1024px){.ftr-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,.9fr) minmax(max-content,1.3fr) minmax(0,1.15fr)}}
+
+.legal .credit{flex-basis:100%}.legal .credit a{color:var(--lime);text-decoration:underline;text-underline-offset:3px}.legal .credit a:hover{color:#fff}
