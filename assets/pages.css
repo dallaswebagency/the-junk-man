@@ -113,3 +113,16 @@
 .est-info h3{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;line-height:1.1}
 .est-info p{color:var(--ink)}
 .fineprint-l dt{text-transform:uppercase}
+
+/* Contractor cleanup services (commercial page) */
+.cc-sec{background:var(--tint);padding-block:clamp(56px,8vw,100px)}
+.cc-g{display:grid;gap:36px;align-items:center}
+.cc-media img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.cc-copy .eyebrow{color:var(--green-deep)}
+.cc-copy h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,6vw,3.6rem);line-height:.98;color:#0b0f07;margin-top:12px}
+.cc-copy .cc-lead{margin-top:16px;max-width:54ch;color:#2a3320;font-size:1.05rem}
+.cc-list{display:grid;gap:10px 24px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+.cc-list li{display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#0b0f07;line-height:1.35}
+.cc-list .ic{width:22px;height:22px;flex:none;margin-top:1px;color:var(--green)}
+.cc-copy .cta-row{margin-top:28px}
+@media (min-width:900px){.cc-g{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}}
