@@ -128,4 +128,4 @@
 @media (min-width:900px){.cc-g{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}}
 
 /* Mobile polish */
-@media (max-width:767px){html,body{overflow-x:clip}.ph h1{font-size:clamp(1.6rem,7.6vw,4.8rem);overflow-wrap:break-word}.legal .credit a{display:inline-block;padding:10px 0}}
+@media (max-width:767px){html,body{overflow-x:clip}.ph h1,.ph.v-center h1{font-size:clamp(1.6rem,8.2vw,4.8rem)}.legal .credit a{display:inline-block;padding:10px 0}}
